@@ -31,7 +31,6 @@ if search:
     # Combine the two dataframes
     combined_df = pd.concat([walmart, food_basics], ignore_index=True)
     st.write(combined_df)
-    
     #Set the seesion state
     st.session_state['search_done'] = True
     st.session_state['compare_clicked'] = False
@@ -51,6 +50,7 @@ if 'compare_clicked' in st.session_state and st.session_state['compare_clicked']
     #df = st.session_state.get('combined_df')
     if df is not None:
         #Drawing the bar chart comparing the Brand,Price of different stores
-        fig = px.bar(df, x='Price', y='Brand',color='store', barmode='group',
+        fig = px.bar(df, x='Brand', y='Price',color='store', barmode='group',
              title='Prices by Brand and Store')
         st.plotly_chart(fig)
+        st.bar_chart(df)
