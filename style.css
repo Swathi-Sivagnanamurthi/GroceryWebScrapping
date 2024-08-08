@@ -1,0 +1,32 @@
+/* style.css */
+img[data-testid="stLogo"] {
+    margin-top: 50px;
+    margin-left: 50px;
+    height: 5.8rem;
+    width: 5.8rem;
+}
+
+[data-testid="stSidebar"]{
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+[data-testid="stHeadingWithActionElements"]{
+    text-align: center;
+}
+/*Setting butoon style*/
+button {
+    background-color: #f76540  !important; /* orange background */
+    color: white !important; /* White text */
+    border: none !important; /* No border */
+    border-radius: 8px !important; /* Rounded corners */
+}
+
+/*setting the text format*/
+.custom-text {
+    font-size: 20px;
+    text-align:center;
+}
+
