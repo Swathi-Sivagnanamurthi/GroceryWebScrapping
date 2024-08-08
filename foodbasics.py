@@ -13,7 +13,7 @@ def get_foodbasics_search(item):
     }
 
     # Send a GET request to the URL
-    response = requests.get(url, headers=headers)
+    response = requests.get(url, headers=headers,proxies=proxies)
     
     # Check if the request was successful
     if response.status_code == 200:
