@@ -22,16 +22,8 @@ def get_foodbasics_search(item):
         
         Description = [des.text.strip() for des in description]
         brand_names = [brand.text.strip() for brand in brands]
-        #sale_prices = [price.text.strip() for price in prices]
-        substrings_to_remove = ['ea', '$']
-        sale_prices = []
-
-        for price in prices:
-            cleaned_price = price.text.strip()
-            for substring in substrings_to_remove:
-                cleaned_price = cleaned_price.replace(substring, '')
-            sale_prices.append(cleaned_price.strip())
-
+        sale_prices = [price.text.strip().replace('ea', '').strip() for price in prices]
+        
         # Create a DataFrame to display the results
         data = { 'Brand': brand_names, 'Description': Description,'Price': sale_prices, 'store':"Food Basics"}
         foodbasics_df = pd.DataFrame(data)
