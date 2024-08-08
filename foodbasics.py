@@ -7,7 +7,11 @@ import streamlit as st
 def get_foodbasics_search(item):
     url = f'https://www.foodbasics.ca/search?filter={item}'
     headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15'}
-    
+    proxies = {
+    'http': 'http://SwathiSivagnanamurthi:Stream@2024@45.32.86.6:31280',
+    'https': 'http://SwathiSivagnanamurthi:Stream@2024@45.32.86.6:31280'
+    }
+
     # Send a GET request to the URL
     response = requests.get(url, headers=headers)
     
